@@ -1,0 +1,20 @@
+{
+  "name": "docker-image-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for querying Docker image metadata and downloading images",
+  "bin": {
+    "docker-img": "./bin/docker-img.js"
+  },
+  "scripts": {
+    "start": "node bin/docker-img.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "chalk": "^4.1.2",
+    "cli-progress": "^3.12.0",
+    "commander": "^11.1.0",
+    "ora": "^5.4.1",
+    "pretty-bytes": "^5.6.0",
+    "tar-stream": "^3.1.6"
+  }
+}
