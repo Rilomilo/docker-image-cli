@@ -15,21 +15,25 @@ Works with Docker Hub and any registry that speaks the [OCI Distribution Spec](h
 
 ## Installation
 
+Install globally via npm:
+
 ```bash
-npm install
+npm install -g docker-image-cli
 ```
 
-Run directly:
+Then use the `docker-img` command anywhere:
 
 ```bash
-node bin/docker-img.js <command> [options]
-```
-
-Or link globally:
-
-```bash
-npm link
 docker-img <command> [options]
+```
+
+For local development, clone the repo and link it:
+
+```bash
+git clone https://github.com/your-username/docker-image-cli.git
+cd docker-image-cli
+npm install
+npm link
 ```
 
 ---
@@ -41,8 +45,8 @@ docker-img <command> [options]
 Search Docker Hub for images.
 
 ```bash
-node bin/docker-img.js search nginx
-node bin/docker-img.js search postgres -n 10
+docker-img search nginx
+docker-img search postgres -n 10
 ```
 
 | Option | Description | Default |
@@ -68,9 +72,9 @@ nginx/nginx-ingress             NGINX and NGINX Plus Ingress Controllers for K..
 List available tags for an image. For Docker Hub images, shows compressed size and last-updated date. Falls back to the registry API for custom registries.
 
 ```bash
-node bin/docker-img.js tags ubuntu
-node bin/docker-img.js tags alpine
-node bin/docker-img.js tags myregistry.example.com/myapp
+docker-img tags ubuntu
+docker-img tags alpine
+docker-img tags myregistry.example.com/myapp
 ```
 
 | Option | Description |
@@ -97,9 +101,9 @@ TAG                                  COMPRESSED SIZE    LAST UPDATED
 Show detailed image metadata: platform, config (env, cmd, ports, volumes, labels), compressed layer sizes, and build history.
 
 ```bash
-node bin/docker-img.js inspect ubuntu:22.04
-node bin/docker-img.js inspect nginx:alpine
-node bin/docker-img.js inspect alpine:latest --platform linux/arm64
+docker-img inspect ubuntu:22.04
+docker-img inspect nginx:alpine
+docker-img inspect alpine:latest --platform linux/arm64
 ```
 
 | Option | Description | Default |
@@ -145,19 +149,19 @@ Layers are downloaded **concurrently** (default: 3 at a time) with a live per-la
 
 ```bash
 # Basic pull (saves as nginx_alpine_latest.tar in current directory)
-node bin/docker-img.js pull nginx:alpine
+docker-img pull nginx:alpine
 
 # Custom output path
-node bin/docker-img.js pull ubuntu:22.04 -o /tmp/ubuntu.tar
+docker-img pull ubuntu:22.04 -o /tmp/ubuntu.tar
 
 # Increase concurrency for faster downloads on fast connections
-node bin/docker-img.js pull python:3.12 -c 6
+docker-img pull python:3.12 -c 6
 
 # Pull a specific platform from a multi-arch image
-node bin/docker-img.js pull ubuntu:22.04 --platform linux/arm64 -o ubuntu_arm64.tar
+docker-img pull ubuntu:22.04 --platform linux/arm64 -o ubuntu_arm64.tar
 
 # Private registry
-node bin/docker-img.js pull myregistry.example.com/myapp:v1.2 -u user -p secret
+docker-img pull myregistry.example.com/myapp:v1.2 -u user -p secret
 ```
 
 | Option | Description | Default |

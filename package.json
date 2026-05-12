@@ -5,6 +5,10 @@
   "bin": {
     "docker-img": "./bin/docker-img.js"
   },
+  "files": [
+    "bin",
+    "src"
+  ],
   "scripts": {
     "start": "node bin/docker-img.js"
   },
