@@ -2,8 +2,12 @@
   "name": "docker-image-cli",
   "version": "1.0.4",
   "description": "CLI tool for querying Docker image metadata and downloading images",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rilomilo/docker-image-cli.git"
+  },
   "bin": {
-    "docker-img": "./bin/docker-img.js"
+    "docker-img": "bin/docker-img.js"
   },
   "files": [
     "bin",
