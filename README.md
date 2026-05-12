@@ -1,15 +1,23 @@
 # docker-image-cli
 
-A command-line tool for searching Docker Hub, inspecting image metadata, and downloading images as tar files — without needing Docker installed.
+[![npm version](https://img.shields.io/npm/v/docker-image-cli.svg)](https://www.npmjs.com/package/docker-image-cli)
+[![npm downloads](https://img.shields.io/npm/dm/docker-image-cli.svg)](https://www.npmjs.com/package/docker-image-cli)
+[![license](https://img.shields.io/npm/l/docker-image-cli.svg)](LICENSE)
+
+**Search, inspect, audit, and fast download Docker images — without installing Docker.**
+
+
+https://github.com/user-attachments/assets/b28cf71e-539d-4596-a894-33739f1981fa
+
 
 ## Features
 
 - **Search** Docker Hub and display stars, pull counts, and official status
-- **List tags** with compressed size and last-updated date (via Docker Hub API)
+- **List tags** with compressed size and last-updated date
 - **Inspect** image config: platform, environment, entrypoint, ports, layers, and build history
-- **Pull** images as `docker load`-compatible tar files, with **concurrent layer downloads** and live progress
-
-Works with Docker Hub and any registry that speaks the [OCI Distribution Spec](https://github.com/opencontainers/distribution-spec) (Docker Registry HTTP API v2).
+- **Pull** images as `docker load`-compatible tars with **concurrent layer downloads** and live progress
+  
+- Works with Docker Hub and any registry that speaks the [OCI Distribution Spec](https://github.com/opencontainers/distribution-spec) (Docker Registry HTTP API v2).
 
 ---
 
@@ -30,7 +38,7 @@ docker-img <command> [options]
 For local development, clone the repo and link it:
 
 ```bash
-git clone https://github.com/your-username/docker-image-cli.git
+git clone https://github.com/Rilomilo/docker-image-cli.git
 cd docker-image-cli
 npm install
 npm link

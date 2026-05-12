@@ -2,6 +2,27 @@
   "name": "docker-image-cli",
   "version": "1.0.5",
   "description": "CLI tool for querying Docker image metadata and downloading images",
+  "license": "MIT",
+  "keywords": [
+    "docker",
+    "docker-image",
+    "docker-hub",
+    "docker-registry",
+    "docker-pull",
+    "docker-load",
+    "oci",
+    "oci-image",
+    "container",
+    "container-image",
+    "registry",
+    "manifest",
+    "image-inspect",
+    "image-download",
+    "no-docker",
+    "air-gapped",
+    "ghcr",
+    "cli"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Rilomilo/docker-image-cli.git"
